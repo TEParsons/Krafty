@@ -237,8 +237,12 @@ hr {
 li::marker {
   font-family: var(--head);
   font-weight: 600;
-  font-size: 2em;
   color: var(--red);
+
+}
+li p {
+  line-height: 2rem;
+  margin: 0;
 }
 
 pre, #write .CodeMirror {
