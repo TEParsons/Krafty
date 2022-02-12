@@ -253,6 +253,18 @@ figure {
   padding-bottom: 5mm;
 }
 
+img {
+  padding: 5mm;
+  padding-bottom: 1cm;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1mm 1mm 2mm 0 rgba(0, 0, 0, 0.3);
+  border: none;
+  transform: rotate(1deg) scale(0.95, 0.95);
+}
+
 
 /** Interface **/
 
