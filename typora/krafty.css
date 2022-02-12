@@ -18,12 +18,18 @@
 
 }
 
-content {
+content, .typora-export-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
   background-image: url("krafty/krafty-bg.jpeg");
   background-size: cover;
   z-index: -2;
 }
-content:after {
+content:after, .typora-export-content:after {
   content: "Background: Jill Burrow via Pexels [#6070384]";
   position: fixed;
   bottom: 1cm;
@@ -137,7 +143,7 @@ hr {
 }
 /* Hide background credit if there's no width */
 @media only screen and (max-width: 37cm) {
-  content:after {
+  content:after, .typora-export-content:after {
     left: -6.1cm
   }
 }
