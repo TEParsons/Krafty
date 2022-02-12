@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --head: 'Roboto Slab';
+  --body: 'Outfit';
+  --mono: 'JetBrains Mono';
+  font-family: var(--body);
+  font-size: 12pt;
+
+  --offblack: #141414;
+  --grey: #36453B;
+  --offwhite: #f2f2f2;
+  --tan: tan;
+  --blue: #449DD1;
+  --red: #BD4F6C;
+
+}
+
+content {
+  background-image: url("https://images.pexels.com/photos/6070384/pexels-photo-6070384.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  z-index: -2
+}
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  background-color: var(--offwhite);
+  padding: 1cm 0;
+  box-sizing: border-box;
+  overflow-y: hide;
+
+  box-shadow: inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+}
+#typora-source {
+  padding-left: 2cm;
+  font-family: var(--mono) !important;
+}
+
+/* Bindings */
+#write:before, #typora-source:before {
+  position: absolute;
+  top: 0cm;
+  bottom: 0cm;
+  left: -1cm;
+  width: 3cm;
+
+  content: "";
+  background-image: url("krafty/binding.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  transform: translateZ(1px);
+}
+
+/* Backboard */
+#write:after, #typora-source:after {
+  position: absolute;
+  top: -0.5cm;
+  bottom: -0.5cm;
+  left: -0.3cm;
+  right: -0.7cm;
+  height: auto;
+
+  content: "";
+  background-color: var(--tan);
+  background-size: cover;
+  border-radius: 0.2cm;
+  box-shadow:
+    inset 0.05cm -0.05cm 0.15cm 0.1cm rgba(0, 0, 0, 0.2),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: translateZ(-1px);
+}
+
+/* Underline and position content */
+#write > p,
+#write > h1,
+#write > h2,
+#write > h3,
+#write > h4,
+#write > h5,
+#write > h6,
+#write > pre,
+#write > blockquote,
+#write > ul,
+#write > ol,
+#write > div,
+#write > figure {
+  position: relative;
+  border-bottom: 0.5mm solid white;
+  padding-left: 3cm;
+  padding-right: 1cm;
+  box-sizing: border-box;
+  width: calc(100% - 0.05cm);
+}
+.md-toc {
+  margin-left: 0;
+  border-radius: 0;
+}
+hr {
+  border: none;
+  border-top: 1mm solid white;
+}
+#typora-source .CodeMirror-line {
+  border-bottom: 0.5mm solid white !important;
+}
+
+/* Responsivity */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+/** Typography **/
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.cm-header,
+ th {
+  font-family: var(--head);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-block-end: 6pt;
+}
+h1,
+.cm-header1 {
+  font-size: 36pt;
+  margin-block-start: 18pt;
+}
+h2,
+.cm-header2 {
+  font-size: 24pt;
+  margin-block-start: 14pt;
+}
+h3,
+.cm-header3 {
+  font-size: 20pt;
+  margin-block-start: 12pt;
+}
+h4,
+.cm-header4 {
+  font-size: 16pt;
+  margin-block-start: 10pt;
+}
+h5,
+.cm-header5 {
+  font-size: 14pt;
+  margin-block-start: 8pt;
+}
+h6,
+.cm-header6 {
+  font-size: 12pt;
+  margin-block-start: 6pt;
+}
+
+/* Inline */
+a, .cm-link {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover, .cm-link:hover {
+  color: var(--red);
+}
+a:visited, .cm-link:visited {
+  color: var(--grey);
+}
+
+mark, .cm-mark {
+  background-color: white;
+  padding: 0 1mm;
+}
+
+del, .cm-del {
+  text-decoration-color: var(--red);
+}
+
+code, .cm-comment {
+  background-color: white;
+  padding: 0 1mm;
+  font-family: var(--mono);
+}
+
+/* Block */
+p {
+  box-sizing: border-box;
+  padding-bottom: 2pt !important;
+}
+
+th {
+  background-color: white;
+  padding: 5mm;
+}
+tr {
+  border-bottom: 1mm solid white;
+}
+td {
+  padding: 5mm;
+}
+
+hr {
+  margin: 5mm;
+  height: 0;
+}
+
+li::marker {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: 2em;
+  color: var(--red);
+}
+
+pre, #write .CodeMirror {
+  background-color: white;
+  font-family: var(--mono);
+  padding: 5mm;
+  margin: 5mm 0;
+  border: none !important;
+}
+
+figure {
+  padding-bottom: 5mm;
+}
+
+
+/** Interface **/
+
+.CodeMirror-vscrollbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#md-searchpanel {
+  background-color: white;
+  background-image: none;
+}
