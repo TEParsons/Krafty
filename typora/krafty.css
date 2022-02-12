@@ -250,7 +250,6 @@ pre, #write .CodeMirror {
   font-family: var(--mono);
   padding: 5mm;
   margin: 5mm 0;
-  border: none !important;
 }
 
 figure {
