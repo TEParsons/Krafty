@@ -274,6 +274,20 @@ img {
   transform: rotate(1deg) scale(0.95, 0.95);
 }
 
+blockquote {
+  position: relative;
+}
+
+blockquote:before {
+    content: "“";
+    color: var(--red);
+    font-size: 48pt;
+    position: absolute;
+    right: calc(100% - 2.8cm);
+    line-height: 1;
+    top: -5mm;
+}
+
 
 /** Interface **/
 
