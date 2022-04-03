@@ -84,6 +84,7 @@ content:after, .typora-export-content:after {
   left: -0.3cm;
   right: -0.7cm;
   height: auto;
+  min-height: calc(100% + 1cm);
 
   content: "";
   background-color: var(--tan);
@@ -96,6 +97,10 @@ content:after, .typora-export-content:after {
   margin-left: 0 !important;
   margin-right: 0 !important;
   transform: translateZ(-1px);
+}
+
+.ty-on-typewriter-mode #write {
+  padding-bottom: 50%;
 }
 
 /* Underline and position content */
