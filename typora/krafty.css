@@ -28,6 +28,9 @@ content, .typora-export-content {
   background-size: cover;
   z-index: -2;
 }
+.typora-export-content {
+  top: 0;
+}
 content:after, .typora-export-content:after {
   content: "Background: Jill Burrow via Pexels [#6070384]";
   position: fixed;
