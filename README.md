@@ -8,7 +8,7 @@ A theme which makes your Typora feel like you’re writing on a Kraft notebook.
 
 What kind of Kraft notebook isn’t plastered all over with instant photos? Not this one, that’s for sure. Images in Krafty are styled with a Polaroid-esque look; a white border, space for labels at the bottom, subtly off-kilter… For an example of how images look, check out the background of this page courtesy of [Jill Burrow](https://www.pexels.com/@jill-burrow) via [Pexels ](https://www.pexels.com/) (thank you!):
 
-![Background Image](../typora/krafty/krafty-bg.jpeg)
+![Background Image](https://images.pexels.com/photos/6070384/pexels-photo-6070384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
 
 ## Code
 
