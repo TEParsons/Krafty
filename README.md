@@ -1,19 +1,60 @@
-# How to install this theme
+# Krafty
 
-This theme is a bit more complicated than most as it contains multiple files, but it's no more complicated to install! Here are the steps:
+A theme which makes your Typora feel like you’re writing on a Kraft notebook.
 
-1. [Download](https://www.itprotoday.com/mobile-management-and-security/how-do-i-download-files-github) this whole repo as a `zip` file
-2. Extract the contents of the `zip` file (guides for [Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc), [Mac](https://www.howtogeek.com/672240/how-to-zip-and-unzip-files-and-folders-on-mac/) and [Linux](https://itsfoss.com/unzip-linux/))
-3. In Typora, go to:
-    1. Preferences
-    2. Appearance
-    3. Themes
-    4. Open theme folder
-4. From the extracted zip file, copy the file `typora/krafty.css` and the folder `typora/krafty` to the theme folder
-5. That's it! It's installed! Just restart Typora and it should appear in your Themes menu.
+---
 
-Happy marking down!
+## Images
 
-## Don't have Typora?
+What kind of Kraft notebook isn’t plastered all over with instant photos? Not this one, that’s for sure. Images in Krafty are styled with a Polaroid-esque look; a white border, space for labels at the bottom, subtly off-kilter… For an example of how images look, check out the background of this page courtesy of [Jill Burrow](https://www.pexels.com/@jill-burrow) via [Pexels ](https://www.pexels.com/) (thank you!):
 
-Well why the heck not! [Click here](https://typora.io/) for details about Typora and how to install it.
+![Background Image](../typora/krafty/krafty-bg.jpeg)
+
+## Code
+
+Code blocks have a white background to stand out against the off-white page, as well as plenty of space around:
+
+```css
+/* Here's the code, if you're curious! */
+
+pre, #write .CodeMirror {
+  background-color: white;
+  font-family: var(--mono);
+  padding: 5mm;
+  margin: 5mm 0;
+  border: none !important;
+}
+```
+
+In code view, you also have a line under each line of text. Super helpful to see how many line breaks you’ve used!
+
+## Tables
+
+Tables have headers formatted like page headers and cells with a thick white border on the bottom.
+
+| Part of the table | Style                                  | Font        |
+| ----------------- | -------------------------------------- | ----------- |
+| Header            | White background                       | Roboto Slab |
+| Cell              | No background, but white bottom border | Outfit      |
+
+
+
+## Fonts
+
+Krafty uses free fonts from [Google Fonts](fonts.google.com), getting them direct from their website, so you don’t need to have them installed! If you’re interested, the three font families used are:
+
+**[Outfit](fonts.google.com/specimen/Outfit)** (for most text)
+
+![Outfit font sample (via Fontke)](https://statics.fontke.com/image/image/2204176/360x270.png)
+
+**[Roboto Slab](fonts.google.com/specimen/Roboto+Slab)** (for headings)
+
+![Roboto Slab font sample (via Fontke)](https://statics.fontke.com/image/image/851153/360x270.png)
+
+**[JetBrains Mono](fonts.google.com/specimen/JetBrains+Mono)** (for code)
+
+![JetBrains Mono font sample (via Fontke)](https://statics.fontke.com/image/image/2052943/360x270.png)
+
+## So… This is in Typora?
+
+Yep! No extra HTML added, just the standard Typora parsed [MarkDown](https://www.markdownguide.org/basic-syntax/) output. The fancy graphics are all SVG backgrounds applied to the `:before` and `:after` tags of the main writing area. 

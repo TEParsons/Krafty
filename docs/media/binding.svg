@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="bindings" x="0" y="0" width="4cm" height="1.5cm" patternUnits="userSpaceOnUse">
+            <circle cx="1.5cm" cy="0.5cm" r="0.25cm" fill="tan"></circle>
+            <circle cx="1.45cm" cy="0.5cm" r="0.15cm" fill="#525252"></circle>
+            <rect x="0cm" y="0.4cm" width="1.5cm" height="0.2cm" rx="0.1cm" fill="black"></rect>
+            <rect x="3cm" y="0" width="0.05cm" height="100%" rx="0" fill="#d2d2d2"></rect>
+        </pattern>
+    </defs>
+    <rect width="100%" height="100%" x="0" y="0" fill="url(#bindings)"></rect>
+</svg>
