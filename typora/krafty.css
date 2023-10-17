@@ -6,19 +6,21 @@
   --head: 'Roboto Slab';
   --body: 'Outfit';
   --mono: 'JetBrains Mono';
-  font-family: var(--body);
-  font-size: 12pt;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.55cm;
 
-  --offblack: #141414;
-  --grey: #36453B;
-  --offwhite: #f2f2f2;
-  --tan: tan;
-  --blue: #449DD1;
+  --page: #fbfbfb;
+  --line: #f2f2f2;
+  --backboard: tan;
+  --margin: #449DD1;
   --red: #BD4F6C;
 
 }
+* {
+  line-height: 1cm;
+}
 
-content, .typora-export-content {
+html, content, .typora-export-content {
   background-image: url("krafty/krafty-bg.jpeg");
   background-size: cover;
 }
@@ -38,20 +40,26 @@ content:after, .typora-export-content:after {
 /** Page **/
 #write, #typora-source {
   position: relative;
-  margin: 4rem auto;
+  padding: 1cm 2cm;
+  padding-left: 3cm;
+  margin: 4cm auto;
   width: 21cm;
-  min-height: 80vh;
-  background-color: var(--offwhite);
-  padding: 1cm 0;
+  min-height: 29cm;
+  background-image: url("krafty/krafty-grid.svg");
+  background-repeat: repeat-y;
+  background-color: var(--page);
+  background-position-x: center;
   box-sizing: border-box;
-  overflow-y: hide;
+  box-shadow: 
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
 
-  box-shadow: inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1);
-  transform-style: preserve-3d;
+  /* Backboard */
+  border: 0.5cm solid var(--backboard);
+  border-radius: 0.2cm;
 }
-#typora-source {
-  padding-left: 2cm;
-  font-family: var(--mono) !important;
+#write *:not(hr) {
+  max-width: 100%;
 }
 
 /* Bindings */
@@ -64,286 +72,137 @@ content:after, .typora-export-content:after {
 
   content: "";
   background-image: url("krafty/binding.svg");
-  background-size: cover;
   background-repeat: repeat;
   transform: translateZ(1px);
 }
 
-/* Backboard */
-#write:after, #typora-source:after {
-  position: absolute;
-  top: -0.5cm;
-  bottom: -0.5cm;
-  left: -0.3cm;
-  right: -0.7cm;
-  height: auto;
-  min-height: calc(100% + 1cm);
-
-  content: "";
-  background-color: var(--tan);
-  background-size: cover;
-  border-radius: 0.2cm;
-  box-shadow:
-    inset 0.05cm -0.05cm 0.15cm 0.1cm rgba(0, 0, 0, 0.2),
-    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
-  z-index: -1;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  transform: translateZ(-1px);
-}
-
-.ty-on-typewriter-mode #write {
-  padding-bottom: 50%;
-}
-
-/* Underline and position content */
-#write > p,
-#write > h1,
-#write > h2,
-#write > h3,
-#write > h4,
-#write > h5,
-#write > h6,
-#write > pre,
-#write > blockquote,
-#write > ul,
-#write > ol,
-#write > div,
-#write > figure {
-  position: relative;
-  border-bottom: 0.5mm solid white;
-  padding-left: 3cm;
-  padding-right: 1cm;
-  box-sizing: border-box;
-  width: calc(100% - 0.05cm);
-}
-.md-toc {
-  margin-left: 0;
-  border-radius: 0;
-}
-hr {
-  border: none;
-  border-top: 1mm solid white;
-}
-#typora-source .CodeMirror-line {
-  border-bottom: 0.5mm solid white !important;
-}
-
-
-/** Responsivity **/
-/* Compress for small windows */
-@media only screen and (max-width: 22cm) {
-  #write, #typora-source {
-    width: 100%;
-    margin: 0;
-  }
-}
-/* Hide background credit if there's no width */
-@media only screen and (max-width: 37cm) {
-  content:after, .typora-export-content:after {
-    left: -6.1cm
-  }
-}
-
-
-/** Export **/
-@media print {
-  content, .typora-export-content {
-    position: relative;
-    background: none;
-    overflow-y: visible;
-  }
-  content:after, .typora-export-content:after {
-    display: none;
-  }
-  body {
-    min-height: 0;
-    margin: 0;
-    overflow-y: visible;
-    background: none;
-  }
-  html {
-    background-color: var(--offwhite);
-  }
-  #write, #typora-source {
-    background: none;
-    box-shadow: none;
-    width: 100%;
-  }
-  #write:after, #write:before {
-    display: none;
-  }
-  #write > p,
-  #write > h1,
-  #write > h2,
-  #write > h3,
-  #write > h4,
-  #write > h5,
-  #write > h6,
-  #write > pre,
-  #write > blockquote,
-  #write > ul,
-  #write > ol,
-  #write > div,
-  #write > figure {
-    padding-left: 1cm;
-  }
-  blockquote:before {
-    right: calc(100% - 0.8cm) !important;
-  }
-}
-
-
-/** Typography **/
-
-/* Headings */
-h1, h2, h3, h4, h5, h6,
-.cm-header,
- th {
-  font-family: var(--head);
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-block-end: 6pt;
-}
-h1,
-.cm-header1 {
-  font-size: 36pt;
-  margin-block-start: 18pt;
-}
-h2,
-.cm-header2 {
-  font-size: 24pt;
-  margin-block-start: 14pt;
-}
-h3,
-.cm-header3 {
-  font-size: 20pt;
-  margin-block-start: 12pt;
-}
-h4,
-.cm-header4 {
-  font-size: 16pt;
-  margin-block-start: 10pt;
-}
-h5,
-.cm-header5 {
-  font-size: 14pt;
-  margin-block-start: 8pt;
-}
-h6,
-.cm-header6 {
-  font-size: 12pt;
-  margin-block-start: 6pt;
-}
-
-/* Inline */
-a, .cm-link {
-  color: var(--blue);
-  text-decoration: none;
-}
-a:hover, .cm-link:hover {
-  color: var(--red);
-}
-a:visited, .cm-link:visited {
-  color: var(--grey);
-}
-
-mark, .cm-mark {
-  background-color: white;
-  padding: 0 1mm;
-}
-
-del, .cm-del {
-  text-decoration-color: var(--red);
-}
-
-code, .cm-comment {
-  background-color: white;
-  padding: 0 1mm;
-  font-family: var(--mono);
-}
-
-/* Block */
+/* Typography */
 p {
-  box-sizing: border-box;
-  padding-bottom: 2pt !important;
+  margin-block-start: 0cm;
+  margin-block-end: 1cm;
+}
+h1, h2, h3, h4, h5, h6, pre {
+  margin-block-start: 1cm;
+  margin-block-end: 1cm;
+}
+h1, h2, h3, h4, h5, h6, th {
+  font-family: 'Roboto Slab', serif;
+}
+h1, h2, h3, h6, th {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+}
+h1, .cm-header1 {
+  font-size: 3rem;
+  line-height: 2cm;
+}
+h2, .cm-header2 {
+  font-size: 2rem;
+  line-height: 2cm;
+}
+h3, .cm-header3 {
+  font-size: 1.5rem;
+  line-height: 2cm;
+}
+h4, .cm-header4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.2rem;
+  margin-block-end: 0;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-block-end: 0;
+}
+a {
+  color: var(--orange);
+}
+a:hover {
+  color: var(--foreground);
+}
+mark, code, pre {
+  background-color: var(--line);
+}
+sub, sup {
+  font-size: 0.3cm;
+  line-height: 0.3cm;
+}
+sup {
+  vertical-align: top;
+}
+sub {
+  vertical-align: bottom;
 }
 
-th {
-  background-color: white;
-  padding: 5mm;
-}
-tr {
-  border-bottom: 1mm solid white;
-}
-td {
-  padding: 5mm;
-}
-
-hr {
-  margin: 5mm;
-  height: 0;
-}
-
-li::marker {
-  font-family: var(--head);
-  font-weight: 600;
-  color: var(--red);
-
-}
-li p {
-  line-height: 2rem;
-  margin: 0;
-}
-
-pre, #write .CodeMirror {
-  background-color: white;
-  font-family: var(--mono);
-  padding: 5mm;
-  margin: 5mm 0;
-}
-
-figure {
-  padding-bottom: 5mm;
-}
-
+/* Block elements */
 img {
-  padding: 5mm;
-  padding-bottom: 1cm;
-  box-sizing: border-box;
-  background-color: white;
-  box-shadow:
-    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
-    1mm 1mm 2mm 0 rgba(0, 0, 0, 0.3);
+  height: 10cm;
+  padding: 1cm;
+  transform: rotate(1deg);
+  box-shadow: 
+    1mm 1mm 2mm rgb(0 0 0 / 20%), 
+    inset 0cm 0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1);
+  background: var(--page);
+  border-radius: 2mm;
   border: none;
-  transform: rotate(1deg) scale(0.95, 0.95);
+}
+p>.md-image:only-child {
+  /* Typora makes it inline, which adds line height and messes up spacing */
+  display: block;
 }
 
 blockquote {
-  position: relative;
+  background-color: var(--line);
+  padding: 0.9cm 1cm;
+  box-sizing: border-box;
+  margin: 1cm 0.1cm;
+  border-bottom: 1mm solid var(--margin);
+  border-top: 1mm solid var(--margin);
+}
+blockquote *:first-child {
+  margin-block-start: 0;
+}
+blockquote *:last-child {
+  margin-block-end: 0;
+}
+hr {
+  display: block;
+  line-height: 0;
+  background-color: var(--margin);
+  border: none;
+  height: 0.1cm;
+  margin: 0.95cm;
 }
 
-blockquote:before {
-    content: "“";
-    color: var(--red);
-    font-size: 48pt;
-    position: absolute;
-    right: calc(100% - 2.8cm);
-    line-height: 1;
-    top: -5mm;
+/* Tables */
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+th, td {
+  padding: 0.5cm;
+}
+th {
+  background-color: var(--line);
+  color: var(--margin);
+}
+tr:nth-child(odd) {
+  background-color: var(--line);
+}
+tr:nth-child(even) {
+  background-color: var(--page);
 }
 
-
-/** Interface **/
-
-.CodeMirror-vscrollbar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
+/* Lists */
+ul, ol {
+  margin-block-end: 1cm;
+  margin-block-start: 1cm;
 }
-
-#md-searchpanel {
-  background-color: white;
-  background-image: none;
+ul ul, ul ol, ol ul, ol ol {
+  margin-block-start: 0;
+}
+li p {
+  margin: 0;
 }
