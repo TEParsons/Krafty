@@ -182,18 +182,16 @@ table {
   border-spacing: 0;
   width: 100%;
 }
-th, td {
-  padding: 0.5cm;
+td {
+  padding: calc(0.5cm - 1px) 0.5cm;
+  background-color: var(--page);
+  border-bottom: 2px solid var(--line);
 }
 th {
+  padding: 0.5cm;
   background-color: var(--line);
-  color: var(--margin);
-}
-tr:nth-child(odd) {
-  background-color: var(--line);
-}
-tr:nth-child(even) {
-  background-color: var(--page);
+  font-family: var(--head);
+  font-weight: bold;
 }
 
 /* Lists */
