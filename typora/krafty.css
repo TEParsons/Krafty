@@ -95,12 +95,12 @@ h1, h2, h3, h6, th {
 h1, .cm-header1 {
   font-size: 3rem;
   line-height: 2cm;
-  margin-block-end: 0cm;
+  margin-block-end: 1cm;
 }
 h2, .cm-header2 {
   font-size: 2rem;
   line-height: 2cm;
-  margin-block-end: 0cm;
+  margin-block-end: 1cm;
 }
 h3, .cm-header3 {
   font-size: 1.5rem;
