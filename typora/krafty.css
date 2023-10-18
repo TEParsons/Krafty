@@ -42,7 +42,7 @@ content:after, .typora-export-content:after {
   position: relative;
   padding: 1cm 2cm;
   padding-left: 3cm;
-  margin: 4cm auto;
+  margin: 2cm auto;
   width: 21cm;
   min-height: 29cm;
   background-image: url("krafty/krafty-grid.svg");
