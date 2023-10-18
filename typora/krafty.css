@@ -90,7 +90,6 @@ h1, h2, h3, h4, h5, h6, th {
 }
 h1, h2, h3, h6, th {
   text-decoration: underline;
-  text-decoration-color: var(--orange);
 }
 h1, .cm-header1 {
   font-size: 3rem;
