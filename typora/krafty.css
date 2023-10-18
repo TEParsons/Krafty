@@ -83,7 +83,7 @@ p {
 }
 h1, h2, h3, h4, h5, h6, pre {
   margin-block-start: 1cm;
-  margin-block-end: 1cm;
+  margin-block-end: 0cm;
 }
 h1, h2, h3, h4, h5, h6, th {
   font-family: 'Roboto Slab', serif;
@@ -95,10 +95,12 @@ h1, h2, h3, h6, th {
 h1, .cm-header1 {
   font-size: 3rem;
   line-height: 2cm;
+  margin-block-end: 0cm;
 }
 h2, .cm-header2 {
   font-size: 2rem;
   line-height: 2cm;
+  margin-block-end: 0cm;
 }
 h3, .cm-header3 {
   font-size: 1.5rem;
